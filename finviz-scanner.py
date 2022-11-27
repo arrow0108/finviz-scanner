@@ -1,14 +1,14 @@
 import requests
 import csv
+import click
 import time
 
 # Globals
 NEW_52_HIGH_SCAN = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,ind_stocksonly,ipodate_01-01-2007x,sh_price_o30,ta_highlow52w_nh,ta_perf_4w20o,ta_sma200_sb50,ta_sma50_pa&ft=4&auth='
 TEN_PERCENT_TO_52_HIGH_SCAN = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,ind_stocksonly,ipodate_01-01-2007x,sh_price_o30,ta_highlow52w_b0to10h,ta_perf_4w20o,ta_sma200_sb50,ta_sma50_pa&ft=4&auth='
 
-
-def scan(URL):
-    url = URL + os.environ.get(USERMAIL, '')
+def scan(URL, username):
+    url = f"{URL}{username}"
     response = requests.get(url)
     open("export.csv", "wb").write(response.content)
     with open("export.csv") as csv_file:
@@ -20,6 +20,12 @@ def scan(URL):
                 continue
             print(row[1])
 
-scan(NEW_52_HIGH_SCAN)
-time.sleep(3)
-scan(TEN_PERCENT_TO_52_HIGH_SCAN)
+@click.command()
+@click.option('--username', default="user@email", help='FinViz User Email')
+def print_scan_results(username):
+    scan(NEW_52_HIGH_SCAN, username)
+    time.sleep(3)
+    scan(TEN_PERCENT_TO_52_HIGH_SCAN, username)
+
+if __name__ == '__main__':
+    print_scan_results()
