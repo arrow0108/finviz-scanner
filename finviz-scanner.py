@@ -9,7 +9,7 @@ TEN_PERCENT_TO_52_HIGH_SCAN = 'https://elite.finviz.com/export.ashx?v=111&f=cap_
 
 def scan(URL):
     url = URL + os.environ.get(USERMAIL, '')
-    response = requests.get(URL)
+    response = requests.get(url)
     open("export.csv", "wb").write(response.content)
     with open("export.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
