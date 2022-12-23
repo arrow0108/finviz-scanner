@@ -4,8 +4,8 @@ import click
 import time
 
 # Globals
-CANSLIM_EPS25 = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,fa_epsqoq_high,ind_stocksonly,sh_avgvol_o1000,sh_price_o5,ta_sma20_pa,ta_sma200_pa,ta_sma50_pa&ft=4&auth='
-CANSLIM_SALES25 = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,fa_salesqoq_high,ind_stocksonly,sh_avgvol_o1000,sh_price_o5,ta_sma20_pa,ta_sma200_pa,ta_sma50_pa&ft=4&auth='
+CANSLIM_EPS25 = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,fa_epsqoq_100to,ind_stocksonly,sh_avgvol_o300,sh_price_o5,ta_sma20_pa,ta_sma50_pa&ft=4&auth='
+CANSLIM_SALES25 = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,fa_salesqoq_100to,ind_stocksonly,sh_avgvol_o300,sh_price_o5,ta_sma20_pa,ta_sma50_pa&ft=4&auth='
 
 #NEW_52_HIGH_SCAN = 'https://elite.finviz.com/export.ashx?v=111&f=fa_epsqoq_o25,fa_salesqoq_o15,cap_midover,ind_stocksonly,sh_avgvol_o300,sh_price_o30,ta_highlow52w_nh,ta_sma200_sb50,ta_sma50_pa&ft=4&auth='
 
