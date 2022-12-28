@@ -4,7 +4,7 @@ import click
 import time
 
 # Globals
-UNIVERSE = 'https://elite.finviz.com/export.ashx?v=111&f=cap_smallover,ind_stocksonly,sh_avgvol_o300,sh_price_o15,ta_sma200_sb50,ta_sma50_pa&ft=4&auth='
+UNIVERSE = 'https://elite.finviz.com/export.ashx?v=111&f=fa_epsyoy1_o20,fa_salesqoq_pos,ind_stocksonly,sh_avgvol_o500,sh_short_o5,ta_beta_o1,ta_sma20_pa,ta_sma200_sb50,ta_sma50_pa&auth='
 
 FILTERS = [UNIVERSE]
 def scan(URL, username):
