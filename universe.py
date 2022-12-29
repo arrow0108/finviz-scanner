@@ -5,8 +5,9 @@ import time
 
 # Globals
 UNIVERSE = 'https://elite.finviz.com/export.ashx?v=151&f=ind_stocksonly,sh_avgvol_o500,sh_short_o5,ta_beta_o1,ta_sma20_pa,ta_sma200_pa,ta_sma50_pa&auth='
+CANSLIM_UNIVERSE = 'https://elite.finviz.com/export.ashx?v=151&f=fa_epsqoq_o20,fa_salesqoq_o20,ind_stocksonly,sh_avgvol_o500,sh_short_o5,ta_beta_o1,ta_sma200_sb50,ta_sma50_pa&auth='
 
-FILTERS = [UNIVERSE]
+FILTERS = [UNIVERSE, CANSLIM_UNIVERSE]
 def scan(URL, username):
     url = f"{URL}{username}"
     response = requests.get(url)
